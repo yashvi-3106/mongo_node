@@ -7,7 +7,7 @@ app.use(cors());
 const port = 3000;
 
 // MongoDB connection details
-const uri_local = "mongodb://127.0.0.1:27017"; 
+const uri_local = "mongodb://127.0.0.1:27017";
 const uri = "mongodb+srv://test:test123@cluster0.cmvmn.mongodb.net/"
 const dbName = "codinggita";
 
@@ -19,7 +19,7 @@ let db, students;
 // Connect to MongoDB and initialize collections
 async function initializeDatabase() {
     try {
-        const client = await MongoClient.connect(uri, { useUnifiedTopology: true });
+        const client = await MongoClient.connect(uri);
         console.log("Connected to MongoDB");
 
         db = client.db(dbName);
